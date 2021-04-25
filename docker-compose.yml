@@ -1,0 +1,45 @@
+version: "3"
+
+networks:
+  intranet:
+
+services:
+  postgres:
+    image: postgres:11
+    networks:
+      intranet:
+        aliases:
+          - postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  payments:
+    image: rivancic/json-server-faker:latest
+    volumes:
+      - ./config/run.sh:/run.sh
+      - ./config/file.js:/data/file.js
+    ports:
+      - "4000:80"
+    networks:
+      intranet:
+        aliases:
+          - payments
+
+  api:
+    image: dosco/graphjin:v0.16.15
+    environment:
+      GO_ENV: "development"
+    ports:
+      - "8080:8080"
+    networks:
+      intranet:
+        aliases:
+          - graphjin
+    depends_on:
+      - postgres
+      - payments
+    volumes:
+      - ./config:/config

@@ -1,0 +1,33 @@
+variables {
+  "data": {
+    "name": "",
+    "description": "",
+    "category_ids": [],
+    "created_at": "",
+    "updated_at": "",
+    "user": {
+      "connect": {
+        "id": 0.0
+      }
+    },
+    "comments": {
+      "body": "",
+      "created_at": "",
+      "updated_at": ""
+    }
+  }
+}
+
+mutation createProductAndComment {
+  products(insert: $data) {
+    id
+    name
+    description
+    category_ids
+    comments {
+      id
+      body
+    }
+  }
+}
+

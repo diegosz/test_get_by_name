@@ -1,0 +1,14 @@
+variables {}
+
+query getCustomerPayments{
+  customers {
+    id
+    email
+    payments {
+      customer_id
+      amount
+      billing_details
+    }
+  }
+}
+
