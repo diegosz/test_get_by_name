@@ -29,7 +29,7 @@ services:
           - payments
 
   api:
-    image: dosco/graphjin:v0.16.15
+    image: dosco/graphjin:v0.16.45
     environment:
       GO_ENV: "development"
     ports:

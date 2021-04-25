@@ -11,4 +11,3 @@ fragment User on users {
     count
   }
 }
-

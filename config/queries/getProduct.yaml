@@ -1,0 +1,14 @@
+name: getProduct
+query: |-
+    query getProduct {
+      products(where: {id: {eq: $id}}) {
+        id
+        name
+        description
+        category_ids
+      }
+    }
+vars: |-
+    {
+      "id": 0.0
+    }

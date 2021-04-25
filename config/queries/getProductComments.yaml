@@ -1,0 +1,20 @@
+name: getProductComments
+query: |-
+    query getProductComments {
+      comments(
+        last: $last
+        before: $cursor
+        where: { products: { name: { eq: $name } } }
+      ) {
+        id
+        body
+        user_id
+        product_id
+      }
+    }
+vars: |-
+    {
+      "last": 0.0,
+      "name": "",
+      "cursor": null
+    }
