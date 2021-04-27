@@ -1,0 +1,8 @@
+fragment productTimedCommentFields on timed_comments {
+  ts
+  id
+  body
+  user_id
+  product_id
+  __typename
+}

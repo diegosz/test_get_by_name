@@ -1,0 +1,17 @@
+name: getProductTimedComments
+query: |-
+    query getProductTimedComments {
+      timed_comments(
+        last: $last
+        before: $cursor
+        where: { products: { name: { eq: $name } } }
+      ) {
+        ...productTimedCommentFields
+      }
+    }
+vars: |-
+    {
+      "last": 0.0,
+      "name": "",
+      "cursor": null
+    }

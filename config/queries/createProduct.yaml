@@ -1,0 +1,25 @@
+name: createProduct
+query: |-
+    mutation createProduct {
+      products(insert: $data) {
+        id
+        name
+        description
+        category_ids
+      }
+    }
+vars: |-
+    {
+      "data": {
+        "name": "",
+        "description": "",
+        "category_ids": [],
+        "created_at": "",
+        "updated_at": "",
+        "user": {
+          "connect": {
+            "id": 0.0
+          }
+        }
+      }
+    }

@@ -1,0 +1,25 @@
+name: createTimedCommentForProduct
+query: |-
+    mutation createTimedCommentForProduct {
+      timed_comments(insert: $data) {
+        id
+        products {
+          id
+          name
+        }
+      }
+    }
+vars: |-
+    {
+      "data": {
+        "ts": "",
+        "body": "",
+        "created_at": "",
+        "updated_at": "",
+        "product": {
+          "connect": {
+            "name": ""
+          }
+        }
+      }
+    }

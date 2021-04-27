@@ -1,7 +1,7 @@
 name: getUser
 query: |-
     query getUser {
-      users(order_by: {created_at: desc}, limit: 5) {
+      users(order_by: {created_at: desc}, limit: 10) {
         ...User
       }
     }
