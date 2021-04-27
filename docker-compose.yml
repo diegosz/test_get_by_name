@@ -28,18 +28,18 @@ services:
         aliases:
           - payments
 
-  api:
-    image: dosco/graphjin:v0.16.45
-    environment:
-      GO_ENV: "development"
-    ports:
-      - "8080:8080"
-    networks:
-      intranet:
-        aliases:
-          - graphjin
-    depends_on:
-      - postgres
-      - payments
-    volumes:
-      - ./config:/config
+  # api:
+  #   image: dosco/graphjin:v0.16.45
+  #   environment:
+  #     GO_ENV: "development"
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     intranet:
+  #       aliases:
+  #         - graphjin
+  #   depends_on:
+  #     - postgres
+  #     - payments
+  #   volumes:
+  #     - ./config:/config

@@ -12,7 +12,7 @@ run:
 	docker-compose up -d \
 	&& while ! nc -z localhost 5432; do sleep 1; echo waiting; done \
 	&& sleep 2 \
-	&& graphjin db:setup \
+	&& GO_ENV=dev graphjin db:setup \
 	&& GO_ENV=dev graphjin serv
 
 # Run docker-compose down -v

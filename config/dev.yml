@@ -167,7 +167,7 @@ auths:
 
 database:
   type: postgres
-  host: postgres
+  host: localhost
   port: 5432
   dbname: webshop_development
   user: postgres
